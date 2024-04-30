@@ -22,7 +22,7 @@ export const SearchBar = () => {
       </button>
       <input
         type="search"
-        className="py-2 pl-8 pr-3 w-full bg-gray-100 rounded focus:outline-none focus:none"
+        className="py-4 pl-10 pr-3 w-full bg-gray-100 rounded focus:outline-none focus:none"
         value={searchItem}
         onChange={handleInputChange}
         placeholder="Search"
