@@ -1,5 +1,9 @@
-import Image from 'next/image';
+import PlanATrip from '@/components/planATrip';
 
 export default function Home() {
-  return <main className="">main page</main>;
+  return (
+    <main className="">
+      <PlanATrip />
+    </main>
+  );
 }
