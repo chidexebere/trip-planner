@@ -4,7 +4,7 @@ import { TopNav } from './nav/TopNav';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 p-10 bg-white">
+    <header className="sticky top-0 p-10 z-30 bg-white border-b border-slate-200">
       <nav className="flex items-center justify-between">
         <div className="flex items-center gap-x-7 ml-6 lg:ml-4 2xl:ml-0">
           <Image

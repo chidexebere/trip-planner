@@ -1,71 +1,57 @@
 import Image from 'next/image';
 import { Icon } from './Icon';
 
-interface Props {
-  startDate: string;
-  endDate: string;
-  nameOfTrip: string;
-  country: string;
-  typeOfTrip: string;
-}
+const tripInfo = {
+  startDate: '21 March 2024',
+  endDate: '21 April 2024',
+  tripName: 'Bahamas Family Trip',
+  tripType: 'Solo Trip',
+  location: { city: 'New York', country: 'United States of America' },
+};
 
-const TripInfo = ({
-  startDate,
-  endDate,
-  nameOfTrip,
-  country,
-  typeOfTrip,
-}: Props) => {
+const TripInfo = () => {
+  const { startDate, endDate, tripName, tripType, location } = tripInfo;
+
   return (
-    <div>
-      <div className="flex flex-row justify-between">
-        <div className="mt-10  w-[50%] ">
-          <div className="bg-secondary-500 text-secondary-600 flex flex-row gap-2 items-center px-4 py-1 mb-7 max-w-max ">
-            <Icon name="Calendar" className="h-6 w-6 mt-2" />
-            <p className="font-bold text-xs">{startDate}</p>
-            <p className="font-bold text-xs">To</p>
-            <Icon name="ArrowLeft" className="h-6 w-6 mt-3" />
-            <p className="font-bold text-xs">{endDate}</p>
+    <>
+      <div className="flex flex-row justify-between items-start">
+        <div className="flex flex-col gap-y-1">
+          <div className="flex gap-x-1 items-center bg-[#FEF4E6] text-[#7A4504] px-2 py-1 font-medium text-sm w-fit">
+            <Icon name="CalendarSmall" className="h-4 w-4" />
+            <span className="">{startDate}</span>
+            <Icon name="ArrowRight" className="h-4 w-4" />
+            <span className="">{endDate}</span>
+          </div>
+
+          <h1 className="font-bold text-2xl text-black py-1">{tripName}</h1>
+          <div className="flex flow-row gap-x-2 text-primary-400 divide-x-2 divide-slate-400 text-sm">
+            <p className="text-[#676E7E]">{`${location.city}, ${location.country}`}</p>
+            <p className="pl-2">{tripType}</p>
           </div>
         </div>
 
         <div className="ml-3 flex flex-col justify-between">
-          <div className="flex items-center gap-7 mx-5 mt-10">
-            <div className="bg-primary-200 rounded- px-10 py-2">
-              <Icon name="UserPlus" className="w-4 h-4" />
+          <div className="flex items-center gap-x-2">
+            <div className="hidden md:flex justify-center bg-[#E7F0FF] rounded px-4 py-2 2xl:w-[160px] 2xl:h-[46px]">
+              <Icon name="UserPlus" className="w-5 h-5 cursor-pointer" />
             </div>
-            {/* <Icon id="three-dots" className="w-7 h-7" /> */}
-            <span>&#8230;</span>
+            <Icon name="DotsThree" className="w-8 h-8 cursor-pointer" />
           </div>
         </div>
       </div>
 
-      <div className="flex flex-row justify-between -mt-3">
-        <div>
-          <h1 className="font-bold text-2xl">{nameOfTrip}</h1>
-          <div className="flex flow-row gap-2 text-primary-400">
-            <p className="border-r border-slate-400 pr-5">{country}</p>
-            <p className="pl-3">{typeOfTrip}</p>
-          </div>
-        </div>
-        <div className=" flex flex-row">
-          <Image
-            src="/images/pic.svg"
-            width={70}
-            height={70}
-            alt=""
-            className="rounded-full"
-          />
-          <Image
-            src="/images/set.svg"
-            width={70}
-            height={70}
-            alt=""
-            className="rounded-full"
-          />
-        </div>
+      <div className="-mt-8 mr-10 hidden md:flex flex-row justify-end items-center ">
+        <Image
+          src="/images/pic.svg"
+          width={40}
+          height={40}
+          alt=""
+          className="rounded-full"
+        />
+        <hr className="w-[31px] h-[2px]" />
+        <Icon name="Set" className="h-10 w-10" />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,5 @@
 import { SideNav } from './nav/SideNav';
 
-const Sidebar = () => (
-  <div className="">
-    <SideNav />
-  </div>
-);
+const Sidebar = () => <SideNav />;
 
 export default Sidebar;

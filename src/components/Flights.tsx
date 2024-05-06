@@ -1,133 +1,115 @@
 import React from 'react';
 import Image from 'next/image';
 import { Icon } from './Icon';
-import { formatToNaira } from '@/helper';
+import { formatToNairaWithCurrency } from '@/helper';
 
 const Flights = () => {
   return (
-    <div className="mt-7">
-      <div className="">
-        <div className="bg-secondary-300 p-4 border-b 0">
-          <div className=" flex flex-row justify-between">
-            <div className="flex flex-row gap-2 mt-2">
-              <Icon name="AirplaneInFlight" className="h-6 w-6" />
-              <p>Flights</p>
-            </div>
+    <div className="bg-[#F0F2F5] px-6 pt-6 pb-[52px] flex flex-col gap-y-6">
+      <div className=" flex flex-row justify-between items-center">
+        <div className="flex flex-row gap-x-2.5">
+          <Icon name="AirplaneInFlight" className="h-6 w-6" />
+          <p className="text-[#1D2433] font-semibold text-lg">Flights</p>
+        </div>
+        <button className="max-w-[153px] font-semibold text-center rounded text-sm py-3 px-6 text-[#0D6EFD] bg-white">
+          Add Flights
+        </button>
+      </div>
 
-            <div className="bg-white text-primary-50 rounded px-5 py-2 text-center cursor-pointer">
-              Add Flights
-            </div>
-          </div>
+      <div className="flex justify-between overflow-x-auto">
+        <div className="flex flex-col bg-white divide-y w-full">
+          <div className="flex flex-col gap-y-3 lg:flex-row items-start lg:items-center pl-6 py-6 pr-12">
+            <div className="flex flex-row gap-x-[19px]">
+              <Image
+                className=""
+                src="/images/american_airlines.svg"
+                width={24}
+                height={24}
+                alt="american airlines logo"
+              />
 
-          <div className="flex flex-row mt-5 ">
-            <div className="bg-white p-5 w-full">
-              <div className="flex flex-row">
-                <div>
-                  <div className="flex flex-row gap-12  border-b  mt-5 pb-5">
-                    <div className="flex flex-row gap-2">
-                      <Image
-                        className="w-[10px] sm:w-[25px] sm:h-[25px] mt-3"
-                        src="/assets/images/flight.jpg"
-                        width={25}
-                        height={25}
-                        alt=""
-                      />
-                      <div>
-                        <h1>American Airlines</h1>
-                        <div className="flex flex-row gap-2 items-center justify-center">
-                          <p className="text-primary-400 xs">AA-B29</p>
-                          <span className="font-extrabold text-primary-50 mb-3 ">
-                            .
-                          </span>
-                          <div className="rounded text-white px-3 py-1 bg-primary-100">
-                            First Class
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-row gap-10">
-                      <div className="flex flex-col gap-1">
-                        <h1 className="text-center fonnt-bold text-2xl">
-                          08:35
-                        </h1>
-                        <p className="text-primary-400 xs">Sun, 20 Aug</p>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between items-center">
-                          <Icon name="AirplaneTakeoff" className="h-6 w-6" />
-                          <Icon name="AirplaneLanding" className="h-6 w-6 " />
-                        </div>
-
-                        <div className="h-3 w-[250px] bg-primary-200 rounded-full flex justify-center">
-                          <div className="h-3 w-[70px] bg-primary-50 rounded-full"></div>
-                        </div>
-
-                        <div className="flex justify-between items-center">
-                          <h1>LOS</h1>
-                          <p className="text-primary-400 text-xs text-center">
-                            Direct
-                          </p>
-                          <h1 className="text-right">SIN</h1>
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-1">
-                        <h1 className="text-center fonnt-bold text-2xl">
-                          09:55
-                        </h1>
-                        <p className="text-primary-400 xs">Sun, 20 Aug</p>
-                      </div>
-                    </div>
-
-                    <h1 className="mt-5 font-bold text-2xl">
-                      {formatToNaira(123450)}
-                    </h1>
-                  </div>
-
-                  <div className="text-primary-400 flex flex-row gap-3 border-b mt-5 pb-5">
-                    <p>Facilities: </p>
-                    <div className="flex flex-row iems-center">
-                      <Icon name="Baggage" className="h-6 w-6 " />
-                      <p className="text-xs mt-1">
-                        Baggage:20kg, Cabin Baggage:8kg
-                      </p>
-                    </div>
-                    <div className="flex flex-row iems-center">
-                      <Icon name="Entertainment" className="h-6 w-6 " />
-                      <p className="text-xs mt-1">in flight entertainment</p>
-                    </div>
-                    <div className="flex flex-row iems-center">
-                      <Icon name="ForkKnife" className="h-6 w-6 " />
-                      <p className="text-xs mt-1">In flight meal</p>
-                    </div>
-                    <div className="flex flex-row iems-center">
-                      <Icon name="Usb" className="h-6 w-6 " />
-                      <p className="text-xs mt-1">USB Port</p>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between">
-                    <div className="flex flex-row gap-5 mt-5">
-                      <h3 className="text-primary-50 font-bold cursor-pointer">
-                        Flight details
-                      </h3>
-                      <h3 className="text-primary-50 font-bold cursor-pointer">
-                        Price details
-                      </h3>
-                    </div>
-
-                    <h3 className="text-primary-50 font-bold cursor-pointer mt-5">
-                      Edit details
-                    </h3>
+              <div className="flex flex-col gap-y-1">
+                <h3 className="text-[#1D2433] font-semibold text-xl">
+                  American Airlines
+                </h3>
+                <div className="flex gap-x-1.5 items-center">
+                  <p className="">AA-B29</p>
+                  <span className="text-xs">&#8226;</span>
+                  <div className="rounded text-white text-xs px-2 py-1 bg-[#0A369D]">
+                    First Class
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-error-100 px-2 ">
-              <Icon name="Close" className="w-6  mt-36" />
+
+            <div className="flex-1 flex justify-start xl:justify-center items-center gap-x-10">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-right font-semibold text-2xl text-[#1D2433]">
+                  08:35
+                </h3>
+                <p className="font-medium text-sm">Sun, 20 Aug</p>
+              </div>
+
+              <div className="flex-1 flex flex-col gap-y-3  max-w-[387px]">
+                <div className="flex justify-between items-center">
+                  <Icon name="AirplaneTakeoff" className="h-5 w-5" />
+                  <span className="font-medium">Duration: 1h 45m</span>
+                  <Icon name="AirplaneLanding" className="h-5 w-5 " />
+                </div>
+
+                <div className="h-2 bg-[#E7F0FF] rounded-full flex items-center justify-center">
+                  <div className="w-1/3 h-2 bg-[#0D6EFD] rounded-full"></div>
+                </div>
+
+                <div className="flex justify-between items-center">
+                  <p>LOS</p>
+                  <p className="text-primary-400 text-xs text-center">Direct</p>
+                  <p className="text-right">SIN</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1">
+                <h1 className="font-semibold text-2xl text-[#1D2433]">09:55</h1>
+                <p className="font-medium text-sm">Sun, 20 Aug</p>
+              </div>
+            </div>
+
+            <h3 className="font-semibold text-[#1D2433] text-2xl text-right">
+              {formatToNairaWithCurrency(123450)}
+            </h3>
+          </div>
+
+          <div className="text-[#647995] text-lg flex flex-col items-start lg:flex-row lg:items-center gap-3 pl-6 py-6 pr-12">
+            <p>Facilities: </p>
+            <div className="flex items-start lg:items-center gap-x-1.5">
+              <Icon name="Baggage" className="h-5 w-5 " />
+              <p className="">Baggage:20kg, Cabin Baggage:8kg</p>
+            </div>
+            <div className="flex items-start lg:items-center gap-x-1.5">
+              <Icon name="Entertainment" className="h-5 w-5 " />
+              <p className="">in flight entertainment</p>
+            </div>
+            <div className="flex items-start lg:items-center gap-x-1.5">
+              <Icon name="ForkKnife" className="h-5 w-5 " />
+              <p className="">In flight meal</p>
+            </div>
+            <div className="flex items-start lg:items-center gap-x-1.5">
+              <Icon name="Usb" className="h-5 w-5 " />
+              <p className="">USB Port</p>
             </div>
           </div>
+
+          <div className="flex flex-nowrap justify-between items-center text-lg text-[#0D6EFD] font-medium pl-6 py-6 pr-12">
+            <div className="flex flex-row item-center gap-x-5 ">
+              <p className="cursor-pointer">Flight details</p>
+              <p className="cursor-pointer">Price details</p>
+            </div>
+            <p className="cursor-pointer">Edit details</p>
+          </div>
+        </div>
+
+        <div className="bg-[#FBEAE9] px-3 flex flex-col justify-center w-fit">
+          <Icon name="Close" className="w-6 h-6" />
         </div>
       </div>
     </div>
