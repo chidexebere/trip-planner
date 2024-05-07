@@ -8,7 +8,7 @@ interface Props {
   outerContainerId: string;
 }
 
-const ResponsiveSidebar = ({ pageWrapId, outerContainerId }: Props) => {
+const ResponsiveSidebar = () => {
   return (
     <Menu>
       <SideNav />

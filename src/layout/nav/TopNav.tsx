@@ -29,7 +29,7 @@ export const TopNav = () => {
           <li key={item.id}>
             <Link
               href={item.href}
-              className="flex flex-col gap-y-2 justify-center items-center"
+              className="flex flex-col gap-y-2 justify-center items-center hover:text-black active:text-black"
             >
               <Icon name={item.icon} className="h-8 w-8" />
               <span>{item.label}</span>
@@ -49,7 +49,7 @@ export const TopNav = () => {
             <li key={item.id}>
               <Link
                 href={item.href}
-                className="flex flex-col gap-y-2 justify-center items-center"
+                className="flex flex-col gap-y-2 justify-center items-center hover:text-black"
               >
                 <Icon name={item.icon} className="h-8 w-8" />
                 <span>{item.label}</span>

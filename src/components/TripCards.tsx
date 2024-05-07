@@ -1,37 +1,7 @@
-const cards = [
-  {
-    id: 1,
-    title: { text: 'Activities', color: 'text-white' },
-    description: {
-      text: 'Build, personalize, and optimize your itineraries with our trip planner.',
-      color: 'text-white',
-    },
-    bgColor: 'bg-[#000031]',
-    button: { text: 'Add Acvities', style: 'text-white bg-[#0D6EFD]' },
-  },
+'use client';
 
-  {
-    id: 2,
-    title: { text: 'Hotels', color: 'text-black' },
-    description: {
-      text: 'Build, personalize, and optimize your itineraries with our trip planner.',
-      color: 'text-[#1D2433]',
-    },
-    bgColor: 'bg-[#E7F0FF]',
-    button: { text: 'Add Hotels', style: 'text-white bg-[#0D6EFD]' },
-  },
-
-  {
-    id: 3,
-    title: { text: 'Flights', color: 'text-white' },
-    description: {
-      text: 'Build, personalize, and optimize your itineraries with our trip planner.',
-      color: 'text-white',
-    },
-    bgColor: 'bg-[#0D6EFD]',
-    button: { text: 'Add Flights', style: 'text-[#0D6EFD] bg-white' },
-  },
-];
+import { useTripStateContext } from '@/contexts/TripContextProvider';
+import { cards } from '@/helper/data';
 
 interface Props {
   title: { text: string; color: string };
@@ -41,6 +11,25 @@ interface Props {
 }
 
 const Card = ({ title, description, bgColor, button }: Props) => {
+  const { setOpenActivityModal, setOpenFlightModal, setOpenHotelModal } =
+    useTripStateContext();
+
+  const toggleModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const { value } = e.target as HTMLButtonElement;
+
+    if (value === 'Activities') {
+      setOpenActivityModal(true);
+    }
+
+    if (value === 'Hotels') {
+      setOpenHotelModal(true);
+    }
+
+    if (value === 'Flights') {
+      setOpenFlightModal(true);
+    }
+  };
+
   return (
     <div className={`px-3.5 py-[18px] rounded lg:w-[270px] ${bgColor}`}>
       <h3 className={`mb-2 font-bold ${title.color}`}>{title.text}</h3>
@@ -49,6 +38,8 @@ const Card = ({ title, description, bgColor, button }: Props) => {
       </p>
       <button
         className={`w-full text-center rounded text-sm py-3 px-6 ${button.style}`}
+        onClick={toggleModal}
+        value={title.text}
       >
         {button.text}
       </button>
