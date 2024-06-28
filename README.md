@@ -18,12 +18,12 @@ To install dependencies, you can run:
 yarn
 ```
 
-## Running the project
+## Run the project
 
 To run the project locally, in the project directory, run:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 Runs the app in the development mode.<br />
