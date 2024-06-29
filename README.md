@@ -18,7 +18,7 @@ To install dependencies, you can run:
 yarn
 ```
 
-## Run the project
+## Running the project
 
 To run the project locally, in the project directory, run:
 
